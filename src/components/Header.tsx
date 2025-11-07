@@ -47,37 +47,37 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <nav className="hidden md:flex space-x-4 items-center">
-          <Link to="/" className="hover:text-secondary">Home</Link>
-          <Link to="/services" className="hover:text-secondary">Services</Link>
-          {/*<Link to="/portfolio" className="hover:text-secondary">Portfolio</Link>*/}
+          <Link to="/" className="hover:text-secondary transition-colors duration-300">Home</Link>
+          <Link to="/services" className="hover:text-secondary transition-colors duration-300">Services</Link>
+          {/*<Link to="/portfolio" className="hover:text-secondary transition-colors duration-300">Portfolio</Link>*/}
           <div className="relative" ref={companyDropdownRef}>
-            <button onClick={() => setIsCompanyOpen(!isCompanyOpen)} className="hover:text-secondary flex items-center">
+            <button onClick={() => setIsCompanyOpen(!isCompanyOpen)} className="hover:text-secondary flex items-center transition-colors duration-300">
               Company
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+              <svg className={`w-4 h-4 ml-1 transition-transform duration-300 ${isCompanyOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             {isCompanyOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                <Link to="/about" onClick={handleCompanyLinkClick} className="block px-4 py-2 text-sm text-gray-700 hover:bg-lightest">About Us</Link>
-                <Link to="/contact" onClick={handleCompanyLinkClick} className="block px-4 py-2 text-sm text-gray-700 hover:bg-lightest">Contact Us</Link>
+              <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20 origin-top-right animate-fade-in-down">
+                <Link to="/about" onClick={handleCompanyLinkClick} className="block px-4 py-2 text-sm text-gray-700 hover:bg-lightest transition-colors duration-300">About Us</Link>
+                <Link to="/contact" onClick={handleCompanyLinkClick} className="block px-4 py-2 text-sm text-gray-700 hover:bg-lightest transition-colors duration-300">Contact Us</Link>
               </div>
             )}
           </div>
         </nav>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg className="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}></path>
             </svg>
           </button>
         </div>
       </div>
       {isOpen && (
-        <nav className="md:hidden mt-4">
-          <Link to="/" className="block py-2 px-4 text-sm hover:bg-lightest">Home</Link>
-          <Link to="/services" className="block py-2 px-4 text-sm hover:bg-lightest">Services</Link>
-          {/*<Link to="/portfolio" className="block py-2 px-4 text-sm hover:bg-lightest">Portfolio</Link>*/}
-          <Link to="/about" className="block py-2 px-4 text-sm hover:bg-lightest">About Us</Link>
-          <Link to="/contact" className="block py-2 px-4 text-sm hover:bg-lightest">Contact Us</Link>
+        <nav className="md:hidden mt-4 animate-fade-in-down">
+          <Link to="/" className="block py-2 px-4 text-sm hover:bg-lightest transition-colors duration-300">Home</Link>
+          <Link to="/services" className="block py-2 px-4 text-sm hover:bg-lightest transition-colors duration-300">Services</Link>
+          {/*<Link to="/portfolio" className="block py-2 px-4 text-sm hover:bg-lightest transition-colors duration-300">Portfolio</Link>*/}
+          <Link to="/about" className="block py-2 px-4 text-sm hover:bg-lightest transition-colors duration-300">About Us</Link>
+          <Link to="/contact" className="block py-2 px-4 text-sm hover:bg-lightest transition-colors duration-300">Contact Us</Link>
         </nav>
       )}
     </header>

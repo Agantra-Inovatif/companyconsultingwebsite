@@ -32,7 +32,7 @@ const services = [
     iconColor: 'text-white',
   },
   {
-    title: 'Web Application Development',
+    title: 'Custom Web Application Development',
     description: 'We build custom web applications from the ground up, tailored to your unique business processes and requirements. Utilizing modern frameworks and technologies, we deliver scalable, secure, and high-performance applications that drive efficiency and innovation. From complex enterprise solutions to interactive consumer-facing platforms, we bring your ideas to life.',
     icon: Code,
     bgColor: 'bg-secondary',
@@ -74,44 +74,44 @@ const Services: React.FC = () => {
   return (
     <div>
       {/* Banner Section */}
-      <div className="relative bg-cover bg-center h-96" style={{ backgroundImage: 'url("https://via.placeholder.com/1500x600/007bff/ffffff?text=Our+Services+Banner")' }}>
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4">
-          <h1 className="text-6xl font-bold mb-4">Our Services</h1>
-          <p className="text-2xl text-center max-w-2xl">Discover how our expertise can transform your digital presence and streamline your operations.</p>
+      <div className="relative bg-cover bg-center h-96" style={{ backgroundImage: 'url("https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")' }}>
+        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 animate-fade-in-down">
+          <h1 className="text-6xl font-extrabold mb-4 drop-shadow-lg">Our Services</h1>
+          <p className="text-xl md:text-2xl text-center max-w-3xl drop-shadow-md">Discover how our expertise can transform your digital presence and streamline your operations with cutting-edge solutions.</p>
         </div>
       </div>
 
-      <div className="py-12 bg-lightest">
+      <div className="py-16 bg-lightest">
         <div className="container mx-auto p-4">
-          <h2 className="text-4xl font-bold mb-6 text-center text-primary">Comprehensive Web Development Solutions</h2>
-          <p className="text-lg text-gray-700 text-center mb-12 max-w-3xl mx-auto">
+          <h2 className="text-5xl font-extrabold mb-12 text-center text-primary animate-fade-in-down">Comprehensive Web Development Solutions</h2>
+          <p className="text-lg md:text-xl text-gray-700 text-center mb-16 max-w-4xl mx-auto animate-fade-in-down leading-relaxed">
             At Agantra Consulting, we offer a range of specialized web development services designed to elevate your digital presence and streamline your operations.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 animate-fade-in-down">
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <div key={index} className={`${service.bgColor} text-white p-8 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105`}>
-                  <div className="flex justify-center mb-4">
-                    <IconComponent className={`w-12 h-12 ${service.iconColor}`} />
+                <div key={index} className={`${service.bgColor} text-white p-10 rounded-lg shadow-2xl transform transition-transform duration-300 hover:scale-105`}>
+                  <div className="flex justify-center mb-6">
+                    <IconComponent className={`w-14 h-14 ${service.iconColor}`} />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-center">{service.title}</h3>
-                  <p className="text-justify">{service.description}</p>
+                  <h3 className="text-3xl font-bold mb-4 text-center">{service.title}</h3>
+                  <p className="text-justify leading-relaxed">{service.description}</p>
                 </div>
               );
             })}
           </div>
 
           {/* Technology Section */}
-          <div className="mt-16 text-center">
-            <h2 className="text-4xl font-bold mb-8 text-primary">Technologies We Master</h2>
-            <div className="flex flex-wrap justify-center gap-8">
+          <div className="mt-20 text-center animate-fade-in-down">
+            <h2 className="text-5xl font-extrabold mb-12 text-primary">Technologies We Master</h2>
+            <div className="flex flex-wrap justify-center gap-10">
               {technologies.map((tech, index) => {
                 const TechIconComponent = tech.icon;
                 return (
-                  <div key={index} className="p-4 bg-white rounded-lg shadow-md flex flex-col items-center justify-center w-36 h-36">
-                    <TechIconComponent className="w-16 h-16 text-primary mb-2" />
+                  <div key={index} className="p-6 bg-white rounded-lg shadow-2xl flex flex-col items-center justify-center w-40 h-40 transform transition-transform duration-300 hover:scale-110">
+                    <TechIconComponent className="w-16 h-16 text-primary mb-4" />
                     <p className="text-lg font-semibold text-gray-800">{tech.name}</p>
                   </div>
                 );
@@ -119,10 +119,10 @@ const Services: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-16 text-center">
-            <h2 className="text-3xl font-bold mb-4 text-primary">Ready to start your project?</h2>
-            <p className="text-lg text-gray-700 mb-8">Let's discuss how our expertise can bring your vision to life.</p>
-            <Link to="/contact" className="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          <div className="mt-20 text-center bg-primary text-white p-12 rounded-lg shadow-2xl animate-fade-in-down">
+            <h2 className="text-4xl font-bold mb-4">Ready to start your project?</h2>
+            <p className="text-xl mb-8">Let's discuss how our expertise can bring your vision to life.</p>
+            <Link to="/contact" className="bg-white text-primary hover:bg-gray-100 font-bold py-4 px-10 rounded-full transition-colors duration-300 shadow-lg text-lg">
               Get a Free Consultation
             </Link>
           </div>
